@@ -12,8 +12,8 @@ import javax.persistence.Id;
 
 @Getter
 @NoArgsConstructor
-@Entity
 @Slf4j
+@Entity
 public class Posts {
 
     @Id
