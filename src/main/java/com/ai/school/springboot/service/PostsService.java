@@ -2,6 +2,7 @@ package com.ai.school.springboot.service;
 
 import com.ai.school.springboot.domain.posts.PostsRepository;
 import com.ai.school.springboot.web.dto.PostsSaveRequestDto;
+import com.ai.school.springboot.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,7 +14,7 @@ public class PostsService {
     private final PostsRepository postsRepository;
 
     @Transactional
-    public Long save(PostsSaveRequestDto requestDto){
+    public Long save(PostsSaveRequestDto requestDto) {
         return postsRepository.save(requestDto.toEntity()).getId();
     }
 
