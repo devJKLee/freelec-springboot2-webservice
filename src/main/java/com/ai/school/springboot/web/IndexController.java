@@ -24,7 +24,8 @@ public class IndexController {
     public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
         if (user != null) {
-            model.addAttribute("userName", user.getName());
+            // userName variable 사용 금지. userName 으로 넘겨줄 시 view template engine 에서, window os 의 %UserName% 을 가져다 쓰는 문제가 있었음
+            model.addAttribute("profileName", user.getName());
         }
         return "index";
     }
